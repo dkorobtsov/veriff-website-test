@@ -3,7 +3,7 @@ package com.dkorobtsov.veriff.website.test.visual
 import com.codeborne.selenide.Selenide.open
 import com.codeborne.selenide.junit5.TextReportExtension
 import com.dkorobtsov.veriff.website.test.constants.*
-import com.dkorobtsov.veriff.website.test.extension.SelenideConfigExtension
+import com.dkorobtsov.veriff.website.test.extension.DriverPerMethodExtension
 import com.dkorobtsov.veriff.website.test.util.acceptCookiesIfNeeded
 import com.dkorobtsov.veriff.website.test.visualcheck.Page
 import com.dkorobtsov.veriff.website.test.visualcheck.assertPageMatchesWithBaseline
@@ -17,7 +17,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 @Epic(EPIC_VERIFF_WEBSITE)
 @Story(STORY_VISUAL_CHECK)
 @ExtendWith(
-    SelenideConfigExtension::class,
+    DriverPerMethodExtension::class,
     TextReportExtension::class
 )
 class VisualTest {
@@ -26,9 +26,7 @@ class VisualTest {
     @Test
     fun `Main Page layout matches baseline`() {
         open(MAIN_PAGE)
-
         acceptCookiesIfNeeded()
-
         assertPageMatchesWithBaseline(Page.MAIN)
     }
 

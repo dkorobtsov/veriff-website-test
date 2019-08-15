@@ -7,11 +7,12 @@ import com.dkorobtsov.veriff.website.test.constants.COOKIES_BUTTON
 import com.dkorobtsov.veriff.website.test.constants.PAGE_HEADER
 import com.dkorobtsov.veriff.website.test.constants.PAGE_LOAD_TIMEOUT
 import org.openqa.selenium.By
-
 import org.openqa.selenium.OutputType
 import org.openqa.selenium.TakesScreenshot
 import org.openqa.selenium.WebDriver
 import java.nio.charset.StandardCharsets
+
+
 
 fun driver(): WebDriver {
     return WebDriverRunner.getWebDriver()
@@ -54,5 +55,5 @@ fun acceptCookiesIfNeeded() {
         element(By.xpath(COOKIES_BUTTON))
             .click()
     }
-
 }
+

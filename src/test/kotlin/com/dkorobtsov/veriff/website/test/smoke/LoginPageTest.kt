@@ -6,7 +6,7 @@ import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.open
 import com.codeborne.selenide.junit5.TextReportExtension
 import com.dkorobtsov.veriff.website.test.constants.*
-import com.dkorobtsov.veriff.website.test.extension.SelenideConfigExtension
+import com.dkorobtsov.veriff.website.test.extension.DriverPerClassExtension
 import io.qameta.allure.Epic
 import io.qameta.allure.Feature
 import io.qameta.allure.Story
@@ -17,7 +17,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 @Feature(FEATURE_LOGIN)
 @Story(STORY_NAVIGATION)
 @ExtendWith(
-    SelenideConfigExtension::class,
+    DriverPerClassExtension::class,
     TextReportExtension::class
 )
 class LoginPageTest {
