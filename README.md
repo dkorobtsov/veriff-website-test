@@ -64,8 +64,9 @@ What to do if nothing works?
     
 ### Project Structure
 
-    config - browser configudarion for Selenoid
-    src\main\javascript - webhook handling service implementation (code snippet only, won't work without AWS sdk)
+    config - browser configuration for Selenoid
+    src\main\javascript - webhook handling service implementation 
+    (code snippet only, won't work without AWS sdk)
     src\main\kotlin - test harness and utility classes
     src\main\resources - properties
     src\test\kotlin - tests
