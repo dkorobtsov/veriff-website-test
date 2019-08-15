@@ -15,9 +15,14 @@ login form works as expected, site contains no broken links and page layouts are
 
 Project contains following tests: 
 
+    smoke (Webdriver based) - vanilla UI tests written using Selenide library
     url (JSoup based) validates html source directly; all unique urls are extracted and checked
     visual (aShot based) - visual checks comparing website UI with existing baseline
-    smoke (Webdriver based) - vanilla UI tests written using Selenide library
+    
+NB. One visual test (form main page) should fail for demo purposes - I removed button 
+and some header from baseline image (test is expected to detect inconsistency). Note that there could be also some random 
+failures if page render will be different from baseline. Exclusions for some parts of UI (like instagram feed) are not configured. 
+All discovered differences will be marked with __RED__ highlights on screenshots attached to Allure test reports. 
     
 ### Requirements
 Minimal requirements to execute tests:
@@ -27,19 +32,28 @@ Minimal requirements to execute tests:
     
 ### Quickstart
 
-NB! First time execution will be _really_ slow.
-
     1. Clone repository.
-    2. Run init.sh > working environment will be initialized:
+    2. Open project directory in terminal
+    3. Run init.sh > working environment will be initialized:
         - Container with Chrome Browser (required for Selenoid)
         - Selenoid - For managing browser sessions
         - Selenoid UI - Available on: http://localhost:8080
-        - Allure Reporting Service - Available on http://localhost:4040
-    3. Wait until environment is fully deployed
-    4. Run tests.sh > will build project and run tests
+        - Allure Reporting Service
+    4. Wait until environment is fully deployed
+        - Allure Reports will be available on: http://localhost:4040
+        - Selenoid UI  will be available on: http://localhost:8080
+        (allows to track browser sessions, open VNC to container etc)
+    5. Run tests.sh > will build project and run tests
+        (my recommendation is to run it in a new terminal window)
         - After test execution, open or refresh following URL 
           to view reports: http://localhost:4040
-
+          (reports should be generated automatically based 
+          on allure-results folder contents)
+          
+NB! First time execution will be __VERY__ slow. Approximate timings for a first run:
+    init.sh - about 10 minutes to rollout full environment 
+    tests.sh - about 5 minutes to fetch all dependencies and build project
+    
 ### Troubleshooting
 
 What to do if nothing works?
