@@ -37,7 +37,8 @@ NB! First time execution will be _really_ slow.
         - Allure Reporting Service - Available on http://localhost:4040
     3. Wait until environment is fully deployed
     4. Run tests.sh > will build project and run tests
-        - After test execution, open or refresh to check reports: http://localhost:4040
+        - After test execution, open or refresh following URL 
+          to view reports: http://localhost:4040
 
 ### Troubleshooting
 
