@@ -51,6 +51,7 @@ Minimal requirements to execute tests:
           on allure-results folder contents)
           
 NB! First time execution will be __VERY__ slow. Approximate timings for a first run:
+
     init.sh - about 10 minutes to rollout full environment 
     tests.sh - about 5 minutes to fetch all dependencies and build project
     
