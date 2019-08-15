@@ -1,0 +1,12 @@
+# IntelliJ project files
+.gradle/
+.idea/
+.allure/
+build/
+out/
+bin
+.settings
+.classpath
+.project
+test-output/
+allure-results/

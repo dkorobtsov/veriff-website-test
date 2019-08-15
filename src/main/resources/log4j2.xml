@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+  <Properties>
+
+    <!-- Console output -->
+    <Property name="CONSOLE_PATTERN">%d{HH:mm:ss.SSS} [%t] %highlight{%-5level}{FATAL=red bright,
+      ERROR=red, WARN=yellow bright, INFO=cyan bright, DEBUG=blue, TRACE=blue} %c{0}:%L - %msg%n
+    </Property>
+
+    <!-- Displays only message -->
+    <Property name="STATUS_PATTERN">%highlight{%msg%n}{INFO=white bright, WARN=yellow, ERROR=red
+      bright}
+    </Property>
+
+  </Properties>
+
+  <Appenders>
+
+    <!-- Console Appenders -->
+    <Console name="StatusConsole" target="SYSTEM_OUT">
+      <PatternLayout pattern="${STATUS_PATTERN}"/>
+    </Console>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${CONSOLE_PATTERN}"/>
+    </Console>
+
+  </Appenders>
+
+  <Loggers>
+
+    <!--               INTERNAL LOGGERS               -->
+    <logger additivity="false" level="debug" name="StatusLogger">
+      <AppenderRef ref="StatusConsole"/>
+    </logger>
+
+    <!-- Root Logger -->
+    <Root additivity="false" level="debug">
+      <!--AppenderRef ref="ReporterAppender"/-->
+      <AppenderRef ref="Console"/>
+    </Root>
+
+    <!--               EXTERNAL LOGGERS               -->
+
+    <!-- Selenium internal logging -->
+    <logger additivity="false" level="warn"
+      name="org.openqa.selenium">
+      <AppenderRef ref="Console"/>
+    </logger>
+
+    <!-- WebDriverManager internal logging -->
+    <logger additivity="false" level="off"
+      name="io.github.bonigarcia.wdm">
+      <AppenderRef ref="Console"/>
+    </logger>
+
+  </Loggers>
+
+</Configuration>
