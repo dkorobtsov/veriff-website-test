@@ -40,8 +40,9 @@ class UrlCheckerTest {
     }
 
     private fun skipTestForBlocksAndRedirects(status: Int) {
-        // As long it's not 4xx or 5xx response, we are OK with that
+        // As long it's not 404 or 5xx response, we are OK with that (probably page is blocking bots)
         Assumptions.assumeFalse(status == HTTP_BAD_METHOD, "Method not allowed")
+        Assumptions.assumeFalse(status == HTTP_FORBIDDEN, "Forbidden")
         Assumptions.assumeFalse(status == HTTP_MOVED_PERM, "Moved Permanently")
         Assumptions.assumeFalse(status == HTTP_MOVED_TEMP, "Temporary Redirect")
 
