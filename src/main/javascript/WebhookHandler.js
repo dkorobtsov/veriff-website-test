@@ -44,7 +44,7 @@ exports.handler = (event, context, callback) => {
 
     const done = (err, res) => callback(null, {
         statusCode: err ? '400' : '200',
-        body: err ? err.message : JSON.stringify(res),
+        body: err ? JSON.stringify(err.message) : JSON.stringify(res),
         headers: {
             'Content-Type': 'application/json',
         },
@@ -117,29 +117,15 @@ exports.handler = (event, context, callback) => {
             }
         }
 
-        let message;
         switch (status) {
-            case 'approved':
-                message = `Verification request approved for: ${json.verification.id}`;
-                callback(null, {
-                    statusCode: '200',
-                    body: message,
-                    headers: {
-                        'Content-Type': 'text/plain',
-                    },
-                });
-
-                sendEmail(message);
-                break;
-
             case undefined:
             case 'unknown':
                 done(new Error(`Invalid request body`));
                 break;
 
             default:
-                message = `Verification request failed for: ${json.verification.id}`
-                done(new Error(message));
+                let message = `Verification request ${status} for: ${json.verification.id}`;
+                done(null, message);
                 sendEmail(message);
                 break
         }
