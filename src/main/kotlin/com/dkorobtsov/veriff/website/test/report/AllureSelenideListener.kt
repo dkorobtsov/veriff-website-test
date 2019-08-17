@@ -43,6 +43,7 @@ class AllureSelenideListener : LogEventListener {
         }
     }
 
+    @Suppress("EmptyFunctionBlock")
     override fun beforeEvent(currentLog: LogEvent) {
 
     }

@@ -48,7 +48,6 @@ class UrlCollector {
     }
 
     private fun getDocument(url: String): Document {
-        logger.debug("Processing url: $url")
         return Jsoup.connect(url)
             // here we don't care about certificates, let's accept them all
             .sslSocketFactory(SSLSocketFactoryProvider().allTrustingSSLSocketFactory())
@@ -101,4 +100,5 @@ class UrlCollector {
         private const val ENDPOINT_NAME_ELEMENT = "span"
         private const val ABSOLUTE_URL_ATTRIBUTE = "abs:href"
     }
+
 }

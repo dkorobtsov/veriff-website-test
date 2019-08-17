@@ -1,43 +1,41 @@
+
 import io.qameta.allure.gradle.AllureExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-buildscript {
-    repositories {
-        jcenter()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
 
 plugins {
     java
     kotlin("jvm") version "1.3.41"
-    id("com.adarshr.test-logger") version "1.7.0"
     id("io.qameta.allure") version "2.8.1"
+    id("com.adarshr.test-logger") version "1.7.0"
+    id("io.gitlab.arturbosch.detekt") version "1.0.0-RC16"
 }
 
-group = "com.dkorobtsov"
-version = "1.0-SNAPSHOT"
+// CodeQuality
+val detektVersion = "1.0.0-RC16"
 
-repositories {
-    mavenCentral()
-}
+// Testing
+val junitVersion = "5.3.1"
+val ashotVersion = "1.5.4"
+val jsoupVersion = "1.11.3"
+val selenideVersion = "5.2.8"
 
-//Utils
+// Reporting
+val allureVersion = "2.12.1"
+
+// Utils
 val slf4jVersion = "1.7.25"
 val log4j2Version = "2.12.1"
 val log4j2KotlinApiVersion = "1.0.0"
 val ownerVersion = "1.0.10"
 val apacheCommonsVersion = "1.1"
 
-//Testing
-val junitVersion = "5.3.1"
-val ashotVersion = "1.5.4"
-val jsoupVersion = "1.11.3"
-val selenideVersion = "5.2.8"
+group = "com.dkorobtsov"
+version = "1.0-SNAPSHOT"
 
-//Reporting
-val allureVersion = "2.12.1"
+repositories {
+    mavenCentral()
+    jcenter()
+}
 
 configure<AllureExtension> {
     resultsDir = File(System.getProperty("user.dir"), "/allure-results")
@@ -86,8 +84,8 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.named<Test>("test") {
-
     include("**/test/**/*")
+    //include("**/test/url/**/*")
     //include("**/test/smoke/**/*")
     //include("**/test/visual/**/*")
     useJUnitPlatform()
@@ -103,10 +101,23 @@ tasks.named<Test>("test") {
         showPassed = true
         showSkipped = true
         showFailed = true
-        showStandardStreams = false
+        showStandardStreams = true
         showPassedStandardStreams = true
         showSkippedStandardStreams = true
         showFailedStandardStreams = true
     }
+}
 
+tasks.check {
+    dependsOn("detekt")
+}
+
+detekt {
+    reports {
+        xml.enabled = false
+        html.enabled = false
+    }
+    ignoreFailures = false
+    toolVersion = detektVersion
+    input = files("src/main/kotlin", "src/test/kotlin")
 }

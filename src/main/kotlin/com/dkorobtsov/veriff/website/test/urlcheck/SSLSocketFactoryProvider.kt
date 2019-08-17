@@ -8,6 +8,7 @@ import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
+@Suppress("EmptyFunctionBlock", "TooGenericExceptionThrown")
 class SSLSocketFactoryProvider {
 
     fun allTrustingSSLSocketFactory(): SSLSocketFactory {

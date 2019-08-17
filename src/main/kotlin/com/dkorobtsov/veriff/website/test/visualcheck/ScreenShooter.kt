@@ -26,7 +26,6 @@ fun takeFullPageScreenshot(): Screenshot? {
         .takeScreenshot(driver())
 }
 
-
 @Step("Assert that page layout matches with baseline")
 fun assertPageMatchesWithBaseline(page: Page) {
     val screenshot = takeFullPageScreenshot()
