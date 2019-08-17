@@ -3,6 +3,7 @@ package com.dkorobtsov.veriff.website.test.config
 import org.aeonbits.owner.Config
 import org.aeonbits.owner.Reloadable
 
+@Config.Sources("classpath:suite.properties")
 interface SuiteConfig : Reloadable {
 
     @Config.DefaultValue("https://www.veriff.com")
@@ -19,6 +20,5 @@ interface SuiteConfig : Reloadable {
 
     @Config.DefaultValue("http://localhost:4444/wd/hub")
     fun selenoidUrl(): String
-
 
 }
