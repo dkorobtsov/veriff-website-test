@@ -11,7 +11,11 @@ enum class Page(private val baseline: String) {
     SUPPORT("veriff_support.png"),
     LOGIN_PAGE("veriff_login.png"),
     FORGOT_PASSWORD("veriff_forgot_password.png"),
-    CONTACT_SALES("veriff_contact_sales.png");
+    CONTACT_SALES("veriff_contact_sales.png"),
+    VERIFF_TIMES("veriff_times.png"),
+    PRIVACY_POLICY("privacy_policy.png"),
+    TERMS_AND_CONDITIONS("terms_and_conditions.png"),
+    RESPONSIBLE_DISCLOSURE("responsible_disclosure.png");
 
     fun baseline(): String {
         return this.baseline

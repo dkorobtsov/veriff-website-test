@@ -107,4 +107,32 @@ class VisualTest {
         assertPageMatchesWithBaseline(Page.LOGIN_PAGE)
     }
 
+    @Feature(FEATURE_VERIFF_TIMES)
+    @Test
+    fun `"Veriff Times" Page layout matches baseline`() {
+        open(VERIFF_TIMES_PAGE)
+        assertPageMatchesWithBaseline(Page.VERIFF_TIMES)
+    }
+
+    @Feature(FEATURE_TERMS_AND_CONDITIONS)
+    @Test
+    fun `"Terms And Conditions" Page layout matches baseline`() {
+        open(FEATURE_TERMS_AND_CONDITIONS)
+        assertPageMatchesWithBaseline(Page.TERMS_AND_CONDITIONS)
+    }
+
+    @Feature(FEATURE_PRIVACY_POLICY)
+    @Test
+    fun `"Privacy Policy" Page layout matches baseline`() {
+        open(PRIVACY_POLICY_PAGE)
+        assertPageMatchesWithBaseline(Page.PRIVACY_POLICY)
+    }
+
+    @Feature(FEATURE_RESPONSIBLE_DISCLOSURE)
+    @Test
+    fun `"Responsible Disclosure" Page layout matches baseline`() {
+        open(RESPONSIBLE_DISCLOSURE_PAGE)
+        assertPageMatchesWithBaseline(Page.RESPONSIBLE_DISCLOSURE)
+    }
+
 }
