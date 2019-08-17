@@ -13,4 +13,3 @@ fun testResource(name: String): File {
 fun imageFromTestResource(file: String): BufferedImage {
     return ImageIO.read(testResource(file))
 }
-

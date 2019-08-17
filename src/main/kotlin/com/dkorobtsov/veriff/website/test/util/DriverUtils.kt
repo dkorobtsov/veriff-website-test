@@ -13,13 +13,13 @@ import org.openqa.selenium.WebDriver
 import java.nio.charset.StandardCharsets
 
 
-
 fun driver(): WebDriver {
     return WebDriverRunner.getWebDriver()
 }
 
 // For some mysterious reason IntellJ randomly
-// highlights AssertionError as compilation error - forcing type argument as workaround
+// highlights AssertionError as compilation error (Throwable is required)
+// Forcing type alias as workaround
 @Suppress("RemoveExplicitTypeArguments")
 fun switchToNewWindow() {
     val driver = WebDriverRunner.getWebDriver()
