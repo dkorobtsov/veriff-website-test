@@ -78,6 +78,7 @@ Automated Tests:
     - Kotlin (primary language)
     - Gradle (build automation)
     - Kotlin DSL (build script)
+    - Detekt (Code quality control)
     - Selenide (webdriver based UI testing)
     - JSoup (html parser)
     - aShot (screenshot based UI testing)
