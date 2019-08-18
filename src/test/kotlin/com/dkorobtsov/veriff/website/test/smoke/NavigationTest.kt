@@ -219,23 +219,21 @@ class NavigationTest {
         element(HEADER_SIGN_IN_LINK)
             .shouldBe(visible)
             .shouldHave(text("Sign in"))
-
-        element(HEADER_SIGN_IN_LINK)
             .click()
 
         element(LOGIN_PAGE_HEADER)
             .shouldBe(visible)
             .shouldHave(text("Log in"))
 
-        element(USER_EMAIL_FIELD)
+        element(LOGIN_USER_EMAIL_FIELD)
             .shouldBe(visible)
             .shouldBe(enabled)
 
-        element(USER_PASSWORD_FIELD)
+        element(LOGIN_USER_PASSWORD_FIELD)
             .shouldBe(visible)
             .shouldBe(enabled)
 
-        element(GREEN_BUTTON)
+        element(LOGIN_GREEN_BUTTON)
             .shouldBe(visible)
             .shouldBe(enabled)
             .shouldHave(value("Log in"))
@@ -245,27 +243,25 @@ class NavigationTest {
     @Test
     fun `"Forgot Password" link leads to the correct page`() {
         open(LOGIN_PAGE)
-        element(FORGOT_PASSWORD_BUTTON)
+        element(LOGIN_FORGOT_PASSWORD_BUTTON)
             .shouldBe(visible)
             .shouldBe(enabled)
-
-        element(FORGOT_PASSWORD_BUTTON)
             .click()
 
-        element(LOGIN_PAGE_HEADER)
+        element(FORGOT_PASSWORD_PAGE_HEADER)
             .shouldBe(visible)
             .shouldHave(text("Forgot password?"))
 
-        element(USER_EMAIL_FIELD)
+        element(FORGOT_PASSWORD_EMAIL_FIELD)
             .shouldBe(visible)
             .shouldBe(enabled)
 
-        element(GREEN_BUTTON)
+        element(FORGOT_PASSWORD_GREEN_BUTTON)
             .shouldBe(visible)
             .shouldBe(enabled)
             .shouldHave(value("Send instructions"))
 
-        element(CANCEL_BUTTON)
+        element(FORGOT_PASSWORD_CANCEL_BUTTON)
             .shouldBe(visible)
             .shouldBe(enabled)
             .shouldHave(text("Cancel"))

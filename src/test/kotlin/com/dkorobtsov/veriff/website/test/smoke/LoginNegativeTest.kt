@@ -27,13 +27,13 @@ class LoginNegativeTest {
     fun `Entering invalid login credentials returns error`() {
         open(LOGIN_PAGE)
 
-        element(USER_EMAIL_FIELD)
+        element(LOGIN_USER_EMAIL_FIELD)
             .value = RandomStringUtils.randomAlphabetic(10)
 
-        element(USER_PASSWORD_FIELD)
+        element(LOGIN_USER_PASSWORD_FIELD)
             .value = RandomStringUtils.randomAlphabetic(10)
 
-        element(GREEN_BUTTON)
+        element(LOGIN_GREEN_BUTTON)
             .click()
 
         element(ALERT_POPUP)

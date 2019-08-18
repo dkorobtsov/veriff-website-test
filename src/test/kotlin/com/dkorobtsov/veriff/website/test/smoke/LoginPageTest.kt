@@ -26,27 +26,27 @@ class LoginPageTest {
     fun `"Forgot Password" link leads to the correct page`() {
         open(LOGIN_PAGE)
 
-        element(FORGOT_PASSWORD_BUTTON)
+        element(LOGIN_FORGOT_PASSWORD_BUTTON)
             .shouldBe(Condition.visible)
             .shouldBe(Condition.enabled)
 
-        element(FORGOT_PASSWORD_BUTTON)
+        element(LOGIN_FORGOT_PASSWORD_BUTTON)
             .click()
 
         element(LOGIN_PAGE_HEADER)
             .shouldBe(Condition.visible)
             .shouldHave(text("Forgot password?"))
 
-        element(USER_EMAIL_FIELD)
+        element(LOGIN_USER_EMAIL_FIELD)
             .shouldBe(Condition.visible)
             .shouldBe(Condition.enabled)
 
-        element(GREEN_BUTTON)
+        element(LOGIN_GREEN_BUTTON)
             .shouldBe(Condition.visible)
             .shouldBe(Condition.enabled)
             .shouldHave(Condition.value("Send instructions"))
 
-        element(CANCEL_BUTTON)
+        element(LOGIN_CANCEL_BUTTON)
             .shouldBe(Condition.visible)
             .shouldBe(Condition.enabled)
             .shouldHave(text("Cancel"))
