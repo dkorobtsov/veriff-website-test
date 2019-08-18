@@ -114,6 +114,7 @@ class VisualTest {
     @Test
     fun `"Veriff Times" Page layout matches baseline`() {
         open(VERIFF_TIMES_PAGE)
+        acceptCookiesIfNeeded()
         assertPageMatchesWithBaseline(Page.VERIFF_TIMES)
     }
 
