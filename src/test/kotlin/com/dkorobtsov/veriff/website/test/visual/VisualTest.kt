@@ -1,5 +1,6 @@
 package com.dkorobtsov.veriff.website.test.visual
 
+import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.open
 import com.dkorobtsov.veriff.website.test.constants.*
 import com.dkorobtsov.veriff.website.test.extension.DriverPerMethodExtension
@@ -81,7 +82,7 @@ class VisualTest {
     @Test
     fun `"Support" Page layout matches baseline`() {
         open(SUPPORT_PAGE)
-        acceptCookiesIfNeeded()
+        element(PAGE_HEADER).click() //workaround for blinking cursor
         assertPageMatchesWithBaseline(Page.SUPPORT)
     }
 
@@ -97,6 +98,7 @@ class VisualTest {
     @Test
     fun `"Forgot Password" Page layout matches baseline`() {
         open(FORGOT_PASSWORD_PAGE)
+        element(LOGIN_PAGE_HEADER).click() //workaround for blinking cursor
         assertPageMatchesWithBaseline(Page.FORGOT_PASSWORD)
     }
 
@@ -104,6 +106,7 @@ class VisualTest {
     @Test
     fun `"Login" Page layout matches baseline`() {
         open(LOGIN_PAGE)
+        element(LOGIN_PAGE_HEADER).click() //workaround for blinking cursor
         assertPageMatchesWithBaseline(Page.LOGIN_PAGE)
     }
 
@@ -117,7 +120,8 @@ class VisualTest {
     @Feature(FEATURE_TERMS_AND_CONDITIONS)
     @Test
     fun `"Terms And Conditions" Page layout matches baseline`() {
-        open(FEATURE_TERMS_AND_CONDITIONS)
+        open(TERMS_AND_CONDITIONS_PAGE)
+        acceptCookiesIfNeeded()
         assertPageMatchesWithBaseline(Page.TERMS_AND_CONDITIONS)
     }
 
@@ -125,6 +129,7 @@ class VisualTest {
     @Test
     fun `"Privacy Policy" Page layout matches baseline`() {
         open(PRIVACY_POLICY_PAGE)
+        acceptCookiesIfNeeded()
         assertPageMatchesWithBaseline(Page.PRIVACY_POLICY)
     }
 
@@ -132,6 +137,7 @@ class VisualTest {
     @Test
     fun `"Responsible Disclosure" Page layout matches baseline`() {
         open(RESPONSIBLE_DISCLOSURE_PAGE)
+        acceptCookiesIfNeeded()
         assertPageMatchesWithBaseline(Page.RESPONSIBLE_DISCLOSURE)
     }
 

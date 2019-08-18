@@ -6,18 +6,29 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import javax.imageio.ImageIO
 
+const val DEFAULT_SCREENSHOTS_DIRECTORY = "screenshots"
 const val DEFAULT_IMAGE_FORMAT = "png"
 
 fun imageToFile(image: BufferedImage?, path: String) {
+    val dir = createScreenshotsDirIfDoesNotExist()
     image?.let {
-        ImageIO.write(it, DEFAULT_IMAGE_FORMAT, File(path))
+        ImageIO.write(it, DEFAULT_IMAGE_FORMAT, File(dir, path))
     }
 }
 
-fun screenshotToFile(screenshot: Screenshot?, path: String) {
+fun screenshotToFile(screenshot: Screenshot?, fileName: String) {
+    val dir = createScreenshotsDirIfDoesNotExist()
     screenshot?.let {
-        ImageIO.write(it.image, DEFAULT_IMAGE_FORMAT, File(path))
+        ImageIO.write(it.image, DEFAULT_IMAGE_FORMAT, File(dir, fileName))
     }
+}
+
+private fun createScreenshotsDirIfDoesNotExist(): File {
+    val dir = File(DEFAULT_SCREENSHOTS_DIRECTORY)
+    when {
+        !dir.exists() -> dir.mkdirs()
+    }
+    return dir
 }
 
 fun imageToByteArray(image: BufferedImage?): ByteArray? {
