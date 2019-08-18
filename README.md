@@ -13,6 +13,17 @@ Simple project created as test assignment.
 Quick smoke test verifying that main navigation paths are opening expected pages, 
 login form works as expected, site contains no broken links and page layouts are matching baseline.
 
+#### What is covered?
+- main navigation path
+- support / login / forgot password page smoke test
+- all unique links are checked
+- visual check of all pages (to find any diffs with baseline)
+
+#### What is not covered?
+- positive flows (user can login / user can recover password etc)
+- page rendering on different screen sizes
+(can be added pretty fast, but is out of scope for given assignment) 
+
 Project contains following tests: 
 
     smoke (Webdriver based) - vanilla UI tests written using Selenide library
@@ -22,7 +33,9 @@ Project contains following tests:
 NB. One visual test (form main page) should fail for demo purposes - I removed button 
 and some header from baseline image (test is expected to detect inconsistency). Note that there could be also some random 
 failures if page render will be different from baseline. Exclusions for some parts of UI (like instagram feed) are not configured. 
-All discovered differences will be marked with __RED__ highlights on screenshots attached to Allure test reports. 
+All discovered differences will be marked with __RED__ highlights on screenshots attached to Allure test reports.
+
+ 
     
 ### Requirements
 Minimal requirements to execute tests:
