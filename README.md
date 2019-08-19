@@ -54,12 +54,14 @@ Minimal requirements to execute tests:
         - Allure Reporting Service
     4. Wait until environment is fully deployed
         - Allure Reports will be available on: http://localhost:4040
-        - Selenoid UI  will be available on: http://localhost:8080
+        - Allure API will be available on: http://localhost:5050
+        - Selenoid UI will be available on: http://localhost:8080
         (allows to track browser sessions, open VNC to container etc)
     5. Run tests.sh > will build project and run tests
         (my recommendation is to run it in a new terminal window)
         - After test execution, open or refresh following URL 
-          to view reports: http://localhost:4040
+          to view reports on server: http://localhost:4040
+          to get emailable report: http://localhost:5050/emailable-report/render
           (reports should be generated automatically based 
           on allure-results folder contents)
           
