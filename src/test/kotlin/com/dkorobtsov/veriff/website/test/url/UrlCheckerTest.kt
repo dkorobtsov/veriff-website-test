@@ -1,11 +1,13 @@
 package com.dkorobtsov.veriff.website.test.url
 
 import com.dkorobtsov.veriff.website.test.constants.EPIC_VERIFF_WEBSITE
-import com.dkorobtsov.veriff.website.test.constants.STORY_HYPERLINKS_VALIDATION
+import com.dkorobtsov.veriff.website.test.constants.FEATURE_HYPERLINKS_VALIDATION
+import com.dkorobtsov.veriff.website.test.constants.STORY_STATUS_CODE_CHECK
 import com.dkorobtsov.veriff.website.test.urlcheck.UrlCollector
 import com.dkorobtsov.veriff.website.test.urlcheck.UrlVerifier
 import io.qameta.allure.Epic
 import io.qameta.allure.Feature
+import io.qameta.allure.Story
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assumptions
 import org.junit.jupiter.api.TestInstance
@@ -15,7 +17,8 @@ import java.net.HttpURLConnection.*
 import java.util.stream.Stream
 
 @Epic(EPIC_VERIFF_WEBSITE)
-@Feature(STORY_HYPERLINKS_VALIDATION)
+@Feature(FEATURE_HYPERLINKS_VALIDATION)
+@Story(STORY_STATUS_CODE_CHECK)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class UrlCheckerTest {
 
