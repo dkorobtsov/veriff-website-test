@@ -8,7 +8,6 @@ import com.dkorobtsov.veriff.website.test.util.*
 import io.qameta.allure.Allure
 import io.qameta.allure.Step
 import org.aeonbits.owner.ConfigFactory
-import org.apache.logging.log4j.kotlin.logger
 import org.junit.jupiter.api.Assertions
 import org.openqa.selenium.By
 import ru.yandex.qatools.ashot.AShot
@@ -82,7 +81,6 @@ private fun getCoordinates(ignoredElements: List<By?>): Set<Coords> {
             dimension.getWidth(),
             dimension.getHeight()
         )
-        logger("StatusLogger").info("Adding ignored cooridnates: $coords")
         ignoredCoordinates.add(coords)
     }
     return ignoredCoordinates
