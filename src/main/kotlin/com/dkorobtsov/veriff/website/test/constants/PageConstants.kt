@@ -63,6 +63,7 @@ const val FORGOT_PASSWORD_GREEN_BUTTON = LOGIN_GREEN_BUTTON
 const val FORGOT_PASSWORD_CANCEL_BUTTON = LOGIN_CANCEL_BUTTON
 
 // Support Page Elements
-const val SUPPORT_SEARCH_INPUT = "#searchBar"
+const val SUPPORT_SEARCH_INPUT = ".search-query"
 const val SUPPORT_SEARCH_BUTTON = "button[type=\"submit\"]"
-//todo: add support page smoke test
+const val SUPPORT_ARTICLES_FOUND = ".articlesFound"
+const val SUPPORT_FIRST_RESULT_TEXT = ".articleList p"

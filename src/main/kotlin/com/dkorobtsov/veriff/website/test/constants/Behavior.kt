@@ -2,10 +2,13 @@ package com.dkorobtsov.veriff.website.test.constants
 
 const val EPIC_VERIFF_WEBSITE = "Veriff Website"
 
-const val STORY_HYPERLINKS_VALIDATION = "Hyperlinks validation"
+const val FEATURE_HYPERLINKS_VALIDATION = "Hyperlinks validation"
 const val STORY_NEGATIVE_CHECKS = "Negative test"
 const val STORY_VISUAL_CHECK = "Visual Check"
 const val STORY_NAVIGATION = "Navigation"
+const val STORY_SEARCH = "Search"
+const val STORY_STATUS_CODE_CHECK = "Status Code Check"
+const val STORY_REDIRECT_CHECK = "Redirect Check"
 
 const val FEATURE_FORGOT_PASSWORD = "Forgot Password Page"
 const val FEATURE_CONTACT_SALES = "Contact Sales Page"
