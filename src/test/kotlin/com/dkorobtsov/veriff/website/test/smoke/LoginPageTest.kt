@@ -4,23 +4,16 @@ import com.codeborne.selenide.Condition
 import com.codeborne.selenide.Condition.text
 import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.open
-import com.codeborne.selenide.junit5.TextReportExtension
 import com.dkorobtsov.veriff.website.test.constants.*
-import com.dkorobtsov.veriff.website.test.extension.DriverPerClassExtension
 import io.qameta.allure.Epic
 import io.qameta.allure.Feature
 import io.qameta.allure.Story
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 
 @Epic(EPIC_VERIFF_WEBSITE)
 @Feature(FEATURE_LOGIN)
 @Story(STORY_NAVIGATION)
-@ExtendWith(
-    DriverPerClassExtension::class,
-    TextReportExtension::class
-)
-class LoginPageTest {
+class LoginPageTest : BaseWebdriverTest() {
 
     @Test
     fun `"Forgot Password" link leads to the correct page`() {
