@@ -45,7 +45,7 @@ class AllureSelenideListener : LogEventListener {
 
     @Suppress("EmptyFunctionBlock")
     override fun beforeEvent(currentLog: LogEvent) {
-
+        // Nothing to do here
     }
 
     private fun attachEvidences() {
