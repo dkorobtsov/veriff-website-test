@@ -7,6 +7,9 @@ import com.dkorobtsov.veriff.website.test.constants.SUPPORT_SEARCH_INPUT
 import org.openqa.selenium.By
 import org.openqa.selenium.By.cssSelector
 
+/**
+ * Class holds references to baseline images and excluded elements for specific pages
+ */
 enum class Page(
     private val baseline: String,
     private vararg val ignoredElements: By?

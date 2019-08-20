@@ -8,7 +8,9 @@ import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 
-
+/**
+ * JUnit5 Extension configuring WebDriver to run all test methods inside class in one browser instance
+ */
 class DriverPerClassExtension : BeforeAllCallback, AfterAllCallback {
 
     override fun beforeAll(context: ExtensionContext?) {

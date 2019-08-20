@@ -9,6 +9,9 @@ import org.junit.jupiter.api.extension.BeforeEachCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 
 
+/**
+ * JUnit5 Extension configuring WebDriver to run each test method inside class in separate browser session
+ */
 class DriverPerMethodExtension : BeforeAllCallback, BeforeEachCallback, AfterEachCallback {
 
     override fun beforeAll(context: ExtensionContext?) {

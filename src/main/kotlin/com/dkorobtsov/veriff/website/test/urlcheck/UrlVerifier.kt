@@ -9,6 +9,10 @@ class UrlVerifier {
 
     private val logger = LogManager.getLogger("StatusLogger")
 
+    /**
+     * Helper method to check if provided url is not broken
+     * @return response status
+     */
     fun checkUrl(url: String): Int {
         logger.debug("Checking url  : $url")
         val huc = URL(url).openConnection() as HttpURLConnection
@@ -17,6 +21,9 @@ class UrlVerifier {
         return huc.responseCode
     }
 
+    /**
+     * Helper method to identify redirect location
+     */
     fun getRedirectUrl(url: String): String? {
         val huc = URL(url).openConnection() as HttpURLConnection
         huc.instanceFollowRedirects = false

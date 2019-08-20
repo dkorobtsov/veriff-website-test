@@ -9,6 +9,9 @@ import javax.imageio.ImageIO
 const val DEFAULT_SCREENSHOTS_DIRECTORY = "screenshots"
 const val DEFAULT_IMAGE_FORMAT = "png"
 
+/**
+ * Saves BufferedImage to file inside default screenshots folder
+ */
 fun imageToFile(image: BufferedImage?, path: String) {
     val dir = createScreenshotsDirIfDoesNotExist()
     image?.let {
@@ -16,6 +19,9 @@ fun imageToFile(image: BufferedImage?, path: String) {
     }
 }
 
+/**
+ * Saves aShot screenshot to file inside default screenshots folder
+ */
 fun screenshotToFile(screenshot: Screenshot?, fileName: String) {
     val dir = createScreenshotsDirIfDoesNotExist()
     screenshot?.let {
@@ -23,14 +29,9 @@ fun screenshotToFile(screenshot: Screenshot?, fileName: String) {
     }
 }
 
-private fun createScreenshotsDirIfDoesNotExist(): File {
-    val dir = File(DEFAULT_SCREENSHOTS_DIRECTORY)
-    when {
-        !dir.exists() -> dir.mkdirs()
-    }
-    return dir
-}
-
+/**
+ * Returns BufferedImage as ByteArray
+ */
 fun imageToByteArray(image: BufferedImage?): ByteArray? {
     image?.let {
         val baos = ByteArrayOutputStream()
@@ -38,4 +39,15 @@ fun imageToByteArray(image: BufferedImage?): ByteArray? {
         return baos.toByteArray()
     }
     return null
+}
+
+/**
+ * Helper method to create folder for saving screenshots and diff images
+ */
+private fun createScreenshotsDirIfDoesNotExist(): File {
+    val dir = File(DEFAULT_SCREENSHOTS_DIRECTORY)
+    when {
+        !dir.exists() -> dir.mkdirs()
+    }
+    return dir
 }
