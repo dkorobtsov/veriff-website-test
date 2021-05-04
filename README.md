@@ -1,6 +1,8 @@
 Veriff Website Automated Check
 ---
 
+**NB: Does not make sense to run tests, those were targeting old version of website.**
+
 Simple project created as test assignment.
 
 ### Task:
